@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Roman Yaz</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #e058ff;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #4a0072;
+      padding: 1rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .container {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    textarea {
+      width: 90%;
+      height: 300px;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      resize: vertical;
+      background-color: #fff;
+      color: #000;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.8rem 2rem;
+      background-color: #4a0072;
+      color: white;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #6a008f;
+    }
+
+    .feather-button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>Yeni Roman</header>
+
+  <div class="container">
+    <textarea placeholder="Burada Romanı Yazmaya Başla..."></textarea>
+    <button onclick="alert('Hikaye Başarıyla Yayımlandı')">Yaz</button>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman İçeriği</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #e058ff;
+            color: #5e0a70;
+        }
+        .container {
+            border: 2px solid #e058ff;
+            padding: 10px;
+            border-radius: 15px;
+            height: 100%;
+            box-sizing: border-box;
+            background-color: #e058ff;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        h1, h2 {
+            color: #5e0a70;
+        }
+        .icons {
+            display: flex;
+            gap: 100px;
+            margin: 40px 0;
+        }
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .icon i {
+            font-size: 24px;
+            color: #5e0a70;
+        }
+        .book-cover-container, .other-books {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .book-cover img {
+            width: 100px;
+            height: 140px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        .other-book img {
+            width: 100px;
+            height: 140px;
+            object-fit: cover;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        .social {
+            font-style: italic;
+            color: #5e0a70;
+        }
+    </style>
+    <script>
+        function showAlert(type) {
+            alert(type + " butonuna tıklandı!");
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h1>Son Sayfa</h1> 
+            <div class="book-cover-container">
+                <a href="story.html" class="book-cover">
+                    <img src="My Story Cover.png" alt="Kapak">
+                </a>
+            </div>
+            <div class="social">@Meram Allulu</div>
+            <div class="icons">
+                <div class="icon" onclick="showAlert('Okuyanlar')">
+                    <i class="fas fa-user"></i>
+                    <span>7866</span>
+                </div>
+                <div class="icon" onclick="showAlert('Yorumlar')">
+                    <i class="fas fa-comment"></i>
+                    <span>1424</span>
+                </div>
+                <div class="icon" onclick="showAlert('Beğenenler')">
+                    <i class="fas fa-heart"></i>
+                    <span>747</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Romanın Tanıtımı</h2>
+            <p>
+                Ya hayatın sana tanıdık gelmeye başlasaydı? Ve ağzından çıkan kelimeleri daha önce söylemiş olsaydın ama hatırlamasaydın?
+                Bunları söylediğinden ve bu durumları yaşadığından eminsin ama yaşamadın!
+                <br><br>
+                Birikmiş ergenlik duyguları, yazı yoluyla boşaltılıp atılmıştı, ancak uzun yıllar sonra buz pateni konusunda yetenekli olarak bilinen Judy'yi takip etmek için geri döndü ve üzüntüsünü boşaltma şeklinden pişmanlık duydu.
+                Hayatını ölümden kurtarmayı başaracak mı yoksa başarısız olup yazdıklarının bedelini mi ödeyecek?
+                <br><br>
+                (Basit bir dolma kalem hayatının akışını değiştirdi, peki onu kurtarmayı gerçekten başaracak mı?).
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Diğer Romanlar</h2>
+            <div class="other-books">
+                <div class="other-book">
+                    <img src="One of my all time favorites! Love this story_.jpeg" alt="Roman 1">
+                </div>
+                <div class="other-book">
+                    <img src="Shatter Me Mirror Necklace Tutorial.jpeg" alt="Roman 2">
+                </div>
+                <div class="other-book">
+                    <img src="One Dark Window (The Shepherd King, 1).jpeg" alt="Roman 3">
+                </div>
+            </div>
+            <div class="social">@___________ @___________ @___________</div>
+        </div>
+    </div>
+</body>
+</html>

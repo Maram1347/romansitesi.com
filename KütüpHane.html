@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Kütüphane</title>
+  <style>
+    body {
+      background-color: #e058ff;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      background-color: #5e0a70;
+      border-bottom: 2px solid #000000;
+    }
+
+    .tab {
+      padding: 15px 15px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: black;
+    }
+
+    .tab.active {
+      border-bottom: 3px solid #000000;
+      color: #000000;
+      background-color: #ffffff44;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .book {
+      height: 150px;
+      width: 90px;
+      background-size: cover;
+      background-position: center;
+      border: 2px solid #a809f7;
+      border-radius: 8px;
+      margin: 0 auto;
+    }
+
+    .item {
+      text-align: center;
+      background-color: #e058ff;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .item:hover {
+      transform: scale(1.03);
+    }
+
+    .reads {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #090909;
+      line-height: 1.4;
+    }
+
+    .reads span {
+      font-size: 13px;
+      color: #5e0a70;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('listeler')">Listeler</div>
+  <div class="tab" onclick="showTab('kitaplar')">Kitaplar</div>
+</div>
+
+<div id="listeler" class="grid">
+  <div class="item">
+    <div class="book" style="background-image: url('My\ Story\ Cover.png');"></div>
+    <div class="reads">
+      <strong>Okudum</strong><br>
+      <span>1 kitap</span>
+    </div>
+  </div>
+  <div class="item">
+    <div class="book" style="background-image: url('My\ Story\ Cover.png');"></div>
+    <div class="reads">
+      <strong>Favorilerim</strong><br>
+      <span>1 kitap</span>
+    </div>
+  </div>
+</div>
+
+<div id="kitaplar" class="grid" style="display: none;">
+  <div class="item">
+    <div class="book" style="background-image: url('My\ Story\ Cover.png');"></div>
+    <div class="reads">7866 kişi okudu</div>
+  </div>
+  <div class="item">
+    <div class="book" style="background-image: url('Hooked\ \(Never\ After\ Series\).jpeg');"></div>
+    <div class="reads">2145 kişi okudu</div>
+  </div>
+  <div class="item">
+    <div class="book" style="background-image: url('FEARLESS\ theories.jpeg');"></div>
+    <div class="reads">359 kişi okudu</div>
+  </div>
+  <div class="item">
+    <div class="book" style="background-image: url('Twisted\ Hate\ \(Twisted\ Book\ Three\)\ -\ PDF\ Room.jpeg');"></div>
+    <div class="reads">124554 kişi okudu</div>
+  </div>
+  <div class="item">
+    <div class="book" style="background-image: url('Things\ We\ Never\ Got\ Over.jpeg');"></div>
+    <div class="reads">4414 kişi okudu</div>
+  </div>
+</div>
+
+<script>
+  function showTab(tabName) {
+    document.getElementById('listeler').style.display = tabName === 'listeler' ? 'grid' : 'none';
+    document.getElementById('kitaplar').style.display = tabName === 'kitaplar' ? 'grid' : 'none';
+
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.classList.remove('active');
+    });
+
+    document.querySelectorAll('.tab').forEach(tab => {
+      if (tab.innerText.toLowerCase() === tabName) {
+        tab.classList.add('active');
+      }
+    });
+  }
+</script>
+</body>
+</html>

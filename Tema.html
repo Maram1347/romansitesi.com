@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tema</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e058ff;
+      margin: 0;
+      padding: 20px;
+      color: white;
+    }
+
+    h1 {
+      text-align: left;
+    }
+
+    .theme-container {
+      background-color: white;
+      color: black;
+      max-width: 4000px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(8, 8, 8, 0.3);
+    }
+
+    .theme-option {
+      display: flex;
+      align-items: left;
+      margin-bottom: 15px;
+    }
+
+    .theme-option input {
+      margin-left: 10px;
+    }
+
+    body.dark {
+      background-color: #1f012f;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Tema</h1>
+
+  <div class="theme-container">
+    <div class="theme-option">
+      <label for="lightTheme">Açık Tema</label>
+      <input type="radio" name="theme" id="lightTheme" checked onclick="changeTheme('light')">
+    </div>
+
+    <div class="theme-option">
+      <label for="darkTheme">Karanlık Tema</label>
+      <input type="radio" name="theme" id="darkTheme" onclick="changeTheme('dark')">
+    </div>
+  </div>
+
+  <script>
+    function changeTheme(theme) {
+      if (theme === 'dark') {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+    }
+  </script>
+</body>
+</html>

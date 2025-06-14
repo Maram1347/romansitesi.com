@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Son Sayfa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e058ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .book-title {
+      text-align: center;
+      margin: 10px 0 20px;
+    }
+
+    .chapters {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .chapter-list {
+      flex: 1;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .chapter-list h3 {
+      margin-top: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 10px 0;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    li:hover {
+      background-color: #ddd;
+    }
+
+    .chapter-content {
+      flex: 3;
+      padding: 15px;
+      background-color: white;
+      border-left: 2px solid #000;
+      border-radius: 8px;
+      min-height: 300px;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+
+    .chapter h3 {
+      margin-top: 0;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #ddd;
+      align-items: center;
+    }
+
+    .footer a {
+      cursor: pointer;
+      font-size: 30px;
+      margin: 0 15px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #icon-share { color: black; }
+    #icon-comments { color: black; }
+    #icon-heart { color: rgb(205, 130, 210); }
+    #icon-heart.active {
+      color: purple;
+    }
+
+    #comment-section, #share-section {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      display: none;
+    }
+
+    #comment-section h4, #share-section h4 {
+      margin-top: 0;
+    }
+
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #e058ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background-color: #c047da;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>Son Sayfa</h1>
+    </div>
+
+    <div class="book-title">
+      <h2></h2>
+    </div>
+
+    <div class="chapters">
+      <div class="chapter-list">
+        <h3>BÖLÜMLER</h3>
+        <ul>
+          <li onclick="showChapter('Başlık')">Başlık</li>
+          <li onclick="showChapter('Bölüm 1')">Bölüm 1</li>
+          <li onclick="showChapter('Bölüm 2')">Bölüm 2</li>
+          <li onclick="showChapter('Bölüm 3')">Bölüm 3</li>
+          <li onclick="showChapter('Bölüm 4')">Bölüm 4</li>
+          <li onclick="showChapter('Bölüm 5')">Bölüm 5</li>
+          <li onclick="showChapter('Bölüm 6')">Bölüm 6</li>
+          <li onclick="showChapter('Bölüm 7')">Bölüm 7</li>
+          <li onclick="showChapter('Bölüm 8')">Bölüm 8</li>
+          <li onclick="showChapter('Bölüm 9')">Bölüm 9</li>
+          <li onclick="showChapter('Bölüm 10')">Bölüm 10</li>
+          <li onclick="showChapter('Bölüm 11')">Bölüm 11</li>
+          <li onclick="showChapter('Bölüm 12')">Bölüm 12</li>
+        </ul>
+      </div>
+
+      <div class="chapter-content" id="chapter-content">
+        <h3 id="chapter-title">Başlık</h3>
+        <div class="chapter" id="chapter-text">
+          Buraya hikayenizi yazabilirsiniz.
+        </div>
+
+        <div id="comment-section">
+          <h4>Yorum Yap</h4>
+          <textarea rows="4" placeholder="Yorumunuzu yazınız..."></textarea>
+          <button>Gönder</button>
+        </div>
+
+        <div id="share-section">
+          <h4>Hikaye Paylaş</h4>
+          <input type="text" placeholder="İsminiz" />
+          <textarea rows="5" placeholder="Paylaşmak istediğiniz hikaye..."></textarea>
+          <button>Gönder</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a id="icon-share" title="Hikaye Paylaş">📤</a>
+      <a id="icon-comments" title="Yorumlar">💬</a>
+      <a id="icon-heart" title="Beğen">❤</a>
+    </div>
+  </div>
+
+  <script>
+    const heartIcon = document.getElementById('icon-heart');
+    heartIcon.addEventListener('click', () => {
+      heartIcon.classList.toggle('active');
+    });
+
+    document.getElementById('icon-comments').addEventListener('click', () => {
+      const comment = document.getElementById('comment-section');
+      comment.style.display = comment.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.getElementById('icon-share').addEventListener('click', () => {
+      const share = document.getElementById('share-section');
+      share.style.display = share.style.display === 'block' ? 'none' : 'block';
+    });
+
+    const chapters = {
+      "Başlık": "Güneş gökyüzünün ortasına yerleşmiş, öğle vaktinin geldiğini müjdeliyordu. Rüzgâr her yanda güçlü esiyor, hava ise bu yeşil ağaçlarla dolu parkta gezmek için harika bir atmosfer sunuyordu. Toprak da bir o kadar verimliydi \n\.Ailelerin çoğu çimenlere oturmuş, yanlarında yiyecek sepetleri vardı. Çocuklarına sesleniyor, oyunu bırakıp anne babalarıyla peynirli sandviç yemeye gelmelerini söylüyorlardı.\n\Futbol topu gökyüzünde süzülerek uzaklara, parkın hemen yanındaki karanlık ormana doğru uçtu.Kestane rengi, omuzlarına kadar inen saçlara ve yaşına göre küçük bir bedene sahip olan küçük kız, topun uzaklara gidişine bakarak iç geçirdi.\n\ Arkadaşına yöneldi; o ise bakışlarını kaybolan topu arar gibi karanlık ormana çevirmişti. Top bir anda gözden kaybolmuştu!\n\ 'Adem!..'\n\ diye seslendi ismiyle. Adem ona döndü ve göz alıcı, sevimli bir gülümsemeyle baktı.\n\ Gülümsediğinde oluşan gamzeleri ortaya çıktı, gözleri parlıyordu. Arkadaşının kendisine doğru geldiğini görünce daha da mutlu oldu.\n\'Dikkat et, düşme sakın!..'\n\ Çocukça sesiyle onu uyardı ve hala gülümsemeye devam ederek hafifçe elini tuttu, düşmemesi için.\n\Yüzüne doğru eğildi, yanağından nazikçe öpüp saçını okşadı. Kızın yüzünde rahatsızlık ifadesi belirdi. Kaşlarını çatarak elini itti.\n\ 'Sana defalarca söyledim, halka açık yerlerde yanağımdan öpme dedim!..'\n\ Sesi yumuşaktı ama aynı zamanda sinirli ve çocukçaydı.Adem başını eğdi, bakışlarını bir yere sabitleyemeyerek bir ona, bir yere baktı.\n\ 'Unuttum… Ama kimse görmedi ki, Judy…'\n\ Etrafındaki insanlara göz gezdirirken babasının onu çağırdığını fark etti.\n\ 'Sanırım gitmeliyiz, peynirli sandviçleri yiyelim. Çok acıktım…'\n\ 'Ama ya top?'\n\ 'Yemekten sonra alırız, ne dersin? Karnımdaki kuş cıvıltılarını dinlemek zorundaymışım gibi hissediyorum!..'\n\ Judy iç çekti, bir plan düşünmeye başladı. O anda aklına bir fikir geldi, çizgi filmlerde olduğu gibi kafasının üstünde küçük bir ampul belirmiş gibiydi.\n\ 'Ne dersin, sen onlara git, topu ben getireyim?'\n\  'Ya karanlık ormanda canavarlar varsa? Sana zarar verebilirler, hatta öğle yemeği olarak seni yiyebilirler!!'\n\ 'Korkma, ben cesurum. Hepsiyle başa çıkabilirim. Bak şu kaslarıma!'\n\ Elbisesinin kolunu sıyırarak incecik kolunu gösterdi ve olmayan kaslarıyla övünmeye başladı.\n\ 'Beni ikna ettin. Ama yine de seninle gelmeliyim, seni korumam lazım.'\n\ 'Ama sen açsın!..'\n\ Ona baktı, sonra da karnına. Elleriyle tutarken midesi hala açlık sesleri çıkarıyordu.\n\ 'Peki o zaman, tek başına git ama gecikme sakın!..'\n\ Ailesine doğru koşarken Judy keyifli bir kahkaha attı ve topun düştüğü yere doğru yöneldi.\n\ Ağaçların birbirine ne kadar yakın olduğuna baktı, ama güneş ışığı az olduğundan ormanın içinde hiçbir şey göremiyordu.\n\ 'Zaten kim gider ki oraya?'\n\ Bunu içinden geçirdi. Kalbi korkuyla atmaya başladı, top görünmüyordu. Bu yüzden ormana girmek zorunda kaldı.\n\ Ağaçların arasında yürürken kollarını kendine sararak güven bulmaya çalıştı. Gözleriyle topu aradı ve sonunda, koyu renkli büyük bir ağacın dibinde onu gördü.\n\ Koşmak istedi ama küçük bir taşa takılıp düştü. Ayağa kalktı, yaprakları üzerinden silkeledi ve dizinin yaralanmadığından emin oldu.\n\ Yeniden topa doğru yürüdü, yere düşmüş dalları geçerek siyah beyaz çizgili topu aldı. Başarmış olmanın sevinciyle gülümsedi; ne de olsa canavarlar onu yememişti.\n\ Annesinin seslenişini duydu, başını çevirince ormanın girişinde onu bekleyen annesini gördü.\n\ 'Geliyorum anne!..'\n\ Bir kez daha ağaca baktı, başını kaldırarak yüksekliğini inceledi.\n\  Annesine gitmek üzereyken, ağaç yapraklarının arasında parlayan küçük bir şey fark etti.Diz çökerek yaprakları kaldırdı, parlayan şeyi takip etmeye başladı. \n\ Kazdıkça kazdı ama parıltı bir anda kesildi.Sarı bir yaprağı kaldırdığında karşısına siyah bir dolma kalem çıktı.\n\  Üzerinde baştan sona dikenli bir dal deseni vardı.Kalemi hayranlıkla tuttu, güzelliği karşısında büyülenmişti.\n\  Korkutucu ve karanlık görünüşüne rağmen, göz kamaştırıcı bir zarafeti vardı.\n\ Annesinin seslenişini tekrar duyunca hızla ayağa kalktı, kalemi sarı çiçek desenli elbisesinin cebine koydu.\n\ Annesine doğru hızlı adımlarla yürüdü, yazma isteği içini sararken elini annesinin eline uzattı. O gün gülümsemesi yüzünden hiç eksik olmadı!",
+      "Bölüm 1": "Bölüm 1: Hikaye Henüz Eklenmedi!..",
+      "Bölüm 2": "Bölüm 2: Hikaye Henüz Eklenmedi!..",
+      "Bölüm 3": "Bölüm 3: Hikaye Henüz Eklenmedi!..",
+      "Bölüm 4": "Bölüm 4: Hikaye Henüz Eklenmedi!..",
+      "Bölüm 5": "Bölüm 5: Hikaye Henüz Eklenmedi!..",
+      "Bölüm 6": "Bölüm 6: Hikaye Henüz Eklenmedi!..",
+      "Bölüm 7": "Bölüm 7: Hikaye Henüz Eklenmedi!..",
+      "Bölüm 8": "Bölüm 8: Hikaye Henüz Eklenmedi!..",
+      "Bölüm 9": "Bölüm 9: Hikaye Henüz Eklenmedi!..",
+      "Bölüm 10": "Bölüm 10: Hikaye Henüz Eklenmedi!..",
+      "Bölüm 11": "Bölüm 11: Hikaye Henüz Eklenmedi!..",
+      "Bölüm 12": "Bölüm 12: Hikaye Henüz Eklenmedi!.."
+    };
+
+    let currentChapter = null;
+
+    function showChapter(name) {
+      if (currentChapter === name) {
+     
+        return;
+      }
+      currentChapter = name;
+      document.getElementById('chapter-title').innerText = name;
+      document.getElementById('chapter-text').innerText = chapters[name] || "Bu bölüm henüz eklenmedi.";
+
+      document.getElementById('comment-section').style.display = 'none';
+      document.getElementById('share-section').style.display = 'none';
+    }
+
+
+    showChapter('Başlık');
+  </script>
+
+</body>
+</html>

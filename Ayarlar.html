@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ayarlar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e058ff;
+      margin: 0;
+      padding: 20px;
+      color: white;
+    }
+
+    h1 {
+      text-align: left;
+      color: black;
+    }
+
+    .settings-container {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    max-width: 4000px;
+    max-height: 1000;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .setting-item {
+      margin-right: 15px;
+
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>⚙️ Ayarlar</h1>
+
+  <div class="settings-container">
+    <div class="setting-item">
+      <label for="notifications">Bildirimleri Aç/Kapat</label><input type="checkbox" id="notifications">
+    </div>
+
+    <div class="setting-item">
+      <label for="language">Dil Seçimi</label>
+      <select id="language">
+        <option value="tr">Türkçe</option>
+        <option value="ar">İngilizce</option>
+        <option value="en">Arapça</option>
+      </select>
+    </div>
+  </div>
+</body>
+</html>
